@@ -1,0 +1,273 @@
+
+;;;;;;IfThenElseSR_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(and (=> (= IfThenElseSR_c_relation_$ (valueBool true)) (= IfThenElseSR_c_relation8_$ (valueInt (- (dataInt IfThenElseSR_c_relation3_$)) ))) (=> (= IfThenElseSR_c_relation_$ (valueBool false)) (= IfThenElseSR_c_relation8_$ IfThenElseSR_c_relation3_$) ))
+
+;p2 (false property)
+;result: 1)sat 
+(and (=> (= IfThenElseSR_c_relation_$ (valueBool true)) (= IfThenElseSR_c_relation8_$ IfThenElseSR_c_relation3_$) ) (=> (= IfThenElseSR_c_relation_$ (valueBool false)) (= IfThenElseSR_c_relation8_$ (valueInt (- (dataInt IfThenElseSR_c_relation3_$)) ))  ))
+
+
+
+
+
+;;;;;;Counter_m_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(or (= Counter_m_c_relation8_$ (valueInt 0)) (= Counter_m_c_relation8_$ (valueInt 1)) (= Counter_m_c_relation8_$ (valueInt 2)) (= Counter_m_c_relation8_$ (valueInt 3)))
+
+;p2 (false property)
+;result: 1)sat
+(and (is-valueInt Counter_m_c_relation8_$) (> (dataInt Counter_m_c_relation8_$) 0))
+
+
+
+
+
+;;;;;;NonStrictAndInLoop_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(= NonStrictAndInLoop_c_relation2_$ (valueBool false))
+
+;p2 (false property)
+;result: 1)sat  
+(= NonStrictAndInLoop_c_relation2_$ unknownBool)
+
+
+
+
+
+
+
+;;;;;;TokenRing_m_c.xml
+;;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(or (and (= TokenRing_m_c_relation22_$ (valueBool true)) (= TokenRing_m_c_relation21_$ (valueBool false)) (= TokenRing_m_c_relation20_$ (valueBool false))) (and (= TokenRing_m_c_relation22_$ (valueBool false)) (= TokenRing_m_c_relation21_$ (valueBool true)) (= TokenRing_m_c_relation20_$ (valueBool false))) (and (= TokenRing_m_c_relation22_$ (valueBool false)) (= TokenRing_m_c_relation21_$ (valueBool false)) (= TokenRing_m_c_relation20_$ (valueBool true))) )
+
+;p2 (false property)
+;result: 1)sat      
+(= TokenRing_m_c_relation20_$ (valueBool false))
+
+
+
+
+
+
+;;;;;;MalikCyclic_m_c.xml
+;;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(and (=> (= MalikCyclic_m_c_relation3_$ (valueBool true)) (= MalikCyclic_m_c_relation6_$ (valueReal (* 2 (+ (dataReal MalikCyclic_m_c_relation5_$) 2))))) (=> (= MalikCyclic_m_c_relation3_$ (valueBool false)) (= MalikCyclic_m_c_relation6_$ (valueReal (+ (* 2 (dataReal MalikCyclic_m_c_relation5_$)) 2)))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (is-valueReal MalikCyclic_m_c_relation6_$) (= (mod (dataReal MalikCyclic_m_c_relation6_$) 2) 1))
+
+
+
+
+
+;;;;;;MalikAcyclic_m_c.xml
+;;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(and (=> (= MalikAcyclic_m_c_relation2_$ (valueBool true)) (= MalikAcyclic_m_c_relation3_$ (valueReal (* 2 (+ (dataReal MalikAcyclic_m_c_relation_$) 2))))) (=> (= MalikAcyclic_m_c_relation2_$ (valueBool false)) (= MalikAcyclic_m_c_relation3_$ (valueReal (+ (* 2 (dataReal MalikAcyclic_m_c_relation_$)) 2)))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (is-valueReal MalikAcyclic_m_c_relation3_$) (= (mod (dataReal MalikAcyclic_m_c_relation3_$) 2) 1))
+
+
+
+
+
+
+;;;;;;CountDown_m_c.xml
+;;p1 (true property)
+;result: 1)unsat 2)sat(k-induction)
+(or (= CountDown_m_c_relation7_$ nilInt) (and (is-valueInt CountDown_m_c_relation7_$) (>= (dataInt CountDown_m_c_relation7_$) 0)))
+
+;;p2 (false property)
+;result: 1)sat 
+(=> (= CountDown_m_c_relation_$ (valueReal 0)) (= CountDown_m_c_relation7_$ CountDown_m_c_relation11_$))
+
+
+
+
+;;;;;;;;;;;;;;FeedbackLoop_c.xml
+;;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(= FeedbackLoop_c_relation_$ (valueInt (+ (dataInt FeedbackLoop_c_relation_$-1) (dataInt FeedbackLoop_c_relation3_$))))
+
+;p2 (false property)
+;result: 1)sat 
+(= FeedbackLoop_c_relation_$ nilInt)
+
+
+
+
+
+;;;;;;;;;;;sldv_model_m_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (= sldv_model_m_c_relation5_$ sldv_model_m_c_relation7_$ sldv_model_m_c_relation12_$ (valueBool false)) (= sldv_model_m_c_relation10_$ sldv_model_m_c_relation10_$-1))
+
+;p2 (false property)
+;result: 1)sat 
+(= sldv_model_m_c_relation36_$ (valueBool true))
+
+
+
+
+
+
+;;;;;;;;;TargetCar_c.xml
+;p1 (true property)
+;result:1)unsat 2)unsat(k-induction) 
+(=> (and (is-valueReal TargetCar_c_relation2_$) (< (dataReal TargetCar_c_relation2_$) Max_Dis_Detect_TargetCar_c_$)) (= TargetCar_c_relation4_$ (valueBool true)))
+
+;p2 (false property)
+;result: 1)sat 
+(and (is-valueReal TargetCar_c_relation_$) (is-valueReal TargetCar_c_relation2_$) (is-valueReal TargetCar_c_relation9_$) (= (dataReal TargetCar_c_relation2_$) (+ (dataReal TargetCar_c_relation2_$-1) (- (dataReal TargetCar_c_relation_$) (dataReal TargetCar_c_relation9_$)))))
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FinalStatesSR_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(or (= FinalStatesSR_c_relation_$ nilInt) (and (is-valueInt FinalStatesSR_c_relation_$) (<= (dataInt FinalStatesSR_c_relation_$) 5)))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (= ST_FinalStatesSR_c_FSMActor_$ 2) (= FinalStatesSR_c_relation_$ nilInt))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_m1_c.xml
+;p1 (true property)
+;result: 1)unsat 2)sat(k-induction) 
+(and (is-valueInt FixedPointFSM_m1_c_relation3_$) (is-valueInt FixedPointFSM_m1_c_relation_$) (= (dataInt FixedPointFSM_m1_c_relation3_$) (* 2 (dataInt FixedPointFSM_m1_c_relation_$))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_m1_c_relation_$ FixedPointFSM_m1_c_relation2_$) (= FixedPointFSM_m1_c_relation3_$ FixedPointFSM_m1_c_relation4_$))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_m2_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(and (is-valueInt FixedPointFSM_m2_c_relation2_$) (is-valueInt FixedPointFSM_m2_c_relation_$) (= (dataInt FixedPointFSM_m2_c_relation2_$) (* 2 (dataInt FixedPointFSM_m2_c_relation_$))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_m2_c_relation_$ FixedPointFSM_m2_c_relation4_$) (= FixedPointFSM_m2_c_relation2_$ FixedPointFSM_m2_c_relation3_$))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(and (= FixedPointFSM_c_relation4_$ FixedPointFSM_c_relation_$) (= FixedPointFSM_c_relation6_$ FixedPointFSM_c_relation5_$))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_c_relation4_$ FixedPointFSM_c_relation5_$) (= FixedPointFSM_c_relation_$ FixedPointFSM_c_relation6_$))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;RailroadControl_c.xml
+;;p1 (true property)  
+;result: 1)unsat 2)unsat(k-induction)
+(not (and (= RailroadControl_c_relation4_$ (valueInt 1)) (= RailroadControl_c_relation_$ (valueInt 1))) )
+
+;;p2 (false property)
+;bd=10，result:：1)unsat 2)sat(k-induction)
+;bd=20，result:：1)sat   a counterexample exists between bound 10 and bound 20
+(=> (= ST_RailroadControl_c_Train_$ 4) (= ST_RailroadControl_c_Gate_$ 4))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;SimpleTrafficLight_c.xml
+;p1 (true property) 
+;result: 1)unsat 2)unsat(k-induction)
+(not (and (= ST_SimpleTrafficLight_c_CarLightNormal_$ 3) (= ST_SimpleTrafficLight_c_PedestrianLightNormal_$ 2)))
+
+;p2 (false property)
+;result:1)sat 
+(=> (= ST_SimpleTrafficLight_c_PedestrianLightNormal_$ 2) (or (= ST_SimpleTrafficLight_c_CarLightNormal_$ 2) (= ST_SimpleTrafficLight_c_CarLightNormal_$ 4)))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;SimpleTrafficLight_m_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(=> (= ST_SimpleTrafficLight_m_c_CarLightNormal_$ 1) (or (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 1) (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 2) ))
+
+;p2 (false property)
+;bd=10，result: 1)unsat 2)sat(k-induction)
+;bd=20，result: 1)sat   a counterexample exists between bound 10 and bound 20
+(not (and (= ST_SimpleTrafficLight_m_c_CarLightNormal_$ 3) (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 2)))
+
+
+
+
+
+
+;;;;;; Driver_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)   
+(=> (and (is-valueReal Driver_c_relation8_$) (> (dataReal Driver_c_relation8_$) (* 1.2 Speed_Min_Driver_c_$))) (= Driver_c_relation27_$ (valueBool true)))
+
+;p2 (false property) 
+;result: 1)sat 
+(=> (= Driver_c_relation8_$ Driver_c_relation5_$) (= Driver_c_relation29_$ (valueBool true)))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;ACCOnOff_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(and (=> (and (= ACCOnOff_c_relation3_$-1 (valueBool false)) (= ACCOnOff_c_relation3_$ (valueBool true))) (= ST_ACCOnOff_c_FSM_$ 0)) (=> (and (= ACCOnOff_c_relation3_$-1 (valueBool true)) (= ACCOnOff_c_relation3_$ (valueBool false))) (= ST_ACCOnOff_c_FSM_$ 1)))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (= ACCOnOff_c_relation13_$ (valueBool false)) (= ST_ACCOnOff_c_FSM_$ 1))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;ACCControl_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (and (is-valueReal ACCControl_c_relation2_$) (<= (dataReal ACCControl_c_relation2_$) Pedals_Min_ACCControl_c_$) (is-valueReal ACCControl_c_relation13_$) (<= Safety_Distance_ACCControl_c_$ (dataReal ACCControl_c_relation13_$)) (= ACCControl_c_relation6_$ (valueBool true))) (= ST_ACCControl_c_FSM_$ 1))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (and (is-valueReal ACCControl_c_relation13_$) (> Safety_Distance_ACCControl_c_$ (dataReal ACCControl_c_relation13_$))) (= ST_ACCControl_c_FSM_$ 1))

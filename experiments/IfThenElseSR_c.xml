@@ -1,0 +1,165 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="IfThenElseSR_c" class="ptolemy.actor.TypedCompositeActor">
+    <property name="SMTConverter" class="ptolemy.verification.kernel.SMTConverter">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-50.0, 55.0]">
+        </property>
+    </property>
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1_20180619">
+    </property>
+    <property name="Formal Model Converter" class="ptolemy.verification.kernel.MathematicalModelConverter">
+        <property name="target" class="ptolemy.data.expr.FileParameter" value="stl.kripke">
+            <display name="Target File"/>
+        </property>
+        <property name="modelType" class="ptolemy.data.expr.ChoiceParameter" value="Real-time Maude Translation(under SR or DE)">
+            <display name="Model Type"/>
+        </property>
+        <property name="Formula Type" class="ptolemy.data.expr.ChoiceParameter" value="LTL">
+            <display name="Formula Type"/>
+        </property>
+        <property name="Output Type" class="ptolemy.data.expr.ChoiceParameter" value="Text Only">
+            <display name="Output Type"/>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[155.0, 55.0]">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={2391, -9, 2418, 1318}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[2188, 1188]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.250000000000002">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{272.63238065326607, 335.870917085427}">
+    </property>
+    <property name="SR Director" class="ptolemy.domains.sr.kernel.SRDirector">
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="20">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-230.0, 50.0]">
+        </property>
+    </property>
+    <property name="Annotation" class="ptolemy.vergil.kernel.attributes.TextAttribute">
+        <property name="textColor" class="ptolemy.actor.gui.ColorAttribute" value="{0.0,0.0,0.0,1.0}">
+        </property>
+        <property name="text" class="ptolemy.kernel.util.StringAttribute" value="A model accomplishing conditional execution using SR.">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-285.0, 420.0]">
+        </property>
+    </property>
+    <entity name="Ramp" class="ptolemy.actor.lib.Ramp">
+        <doc>Create a sequence of tokens with increasing value</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-210.0, 170.0]">
+        </property>
+    </entity>
+    <entity name="SequencePlotter" class="ptolemy.actor.lib.gui.SequencePlotter">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={444, 424, 500, 344}, maximized=false}">
+        </property>
+        <property name="_plotSize" class="ptolemy.actor.gui.SizeAttribute" value="[500, 300]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[240.0, 170.0]">
+        </property>
+        <property name="requiredFiringsPerIteration" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <configure>
+<?plotml <!DOCTYPE plot PUBLIC "-//UC Berkeley//DTD PlotML 1//EN"
+"http://ptolemy.eecs.berkeley.edu/xml/dtd/PlotML_1.dtd">
+<plot>
+<title>SequencePlotter</title>
+<xLabel></xLabel>
+<yLabel></yLabel>
+<xRange min="0.0" max="39.0"/>
+<yRange min="-39.0" max="38.0"/>
+<default connected="no" marks="dots" stems="yes"/>
+</plot>?>
+        </configure>
+    </entity>
+    <entity name="Bernoulli" class="ptolemy.actor.lib.Bernoulli">
+        <doc>Create a sequence of bernoulli random variables</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-215.0, 335.0]">
+        </property>
+    </entity>
+    <entity name="Scale" class="ptolemy.actor.lib.Scale">
+        <property name="factor" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.AttributeValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="factor">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[70.0, 170.0]">
+        </property>
+    </entity>
+    <entity name="Scale2" class="ptolemy.actor.lib.Scale">
+        <property name="_icon" class="ptolemy.vergil.icon.AttributeValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="factor">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[90.0, 285.0]">
+        </property>
+    </entity>
+    <entity name="When" class="ptolemy.domains.sr.lib.When">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 170.0]">
+        </property>
+    </entity>
+    <entity name="LogicalNot" class="ptolemy.actor.lib.logic.LogicalNot">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-120.0, 335.0]">
+        </property>
+    </entity>
+    <entity name="When2" class="ptolemy.domains.sr.lib.When">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-25.0, 305.0]">
+        </property>
+    </entity>
+    <entity name="Default" class="ptolemy.actor.lib.Default">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[160.0, 170.0]">
+        </property>
+    </entity>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        <vertex name="vertex1" value="{-160.0, 335.0}">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;relation5.vertex1&quot;,x=135.0,y=235.0}, tail={id=&quot;When.control&quot;,x=275.0,y=70.0}, points={135.0,120.0,275.0,120.0} },{ head={id=&quot;relation5.vertex1&quot;,x=135.0,y=235.0}, tail={id=&quot;LogicalNot.input&quot;,x=175.0,y=235.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+        </property>
+        <vertex name="vertex1" value="[-70.0, 170.0]">
+        </vertex>
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;relation6.vertex1&quot;,x=225.0,y=70.0}, tail={id=&quot;When2.input&quot;,x=275.0,y=165.0}, points={225.0,165.0} },{ head={id=&quot;When.input&quot;,x=275.0,y=70.0}, tail={id=&quot;relation6.vertex1&quot;,x=225.0,y=70.0}, points={} },{ head={id=&quot;Ramp.output&quot;,x=85.0,y=70.0}, tail={id=&quot;relation6.vertex1&quot;,x=225.0,y=70.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Scale.input&quot;,x=365.0,y=70.0}, tail={id=&quot;When.output&quot;,x=275.0,y=70.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;Scale.output&quot;,x=365.0,y=70.0}, tail={id=&quot;Default.preferred&quot;,x=455.0,y=70.0}, points={} } }">
+        </property>
+    </relation>
+    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+        <property name="_layoutHint" class="ptolemy.vergil.actor.LayoutHint" value="{ { head={id=&quot;SequencePlotter.input&quot;,x=535.0,y=70.0}, tail={id=&quot;Default.output&quot;,x=455.0,y=70.0}, points={} } }">
+        </property>
+    </relation>
+    <link port="Ramp.output" relation="relation3"/>
+    <link port="SequencePlotter.input" relation="relation8"/>
+    <link port="Bernoulli.output" relation="relation"/>
+    <link port="Scale.input" relation="relation4"/>
+    <link port="Scale.output" relation="relation6"/>
+    <link port="Scale2.input" relation="relation5"/>
+    <link port="Scale2.output" relation="relation7"/>
+    <link port="When.input" relation="relation3"/>
+    <link port="When.output" relation="relation4"/>
+    <link port="When.control" relation="relation"/>
+    <link port="LogicalNot.input" relation="relation"/>
+    <link port="LogicalNot.output" relation="relation2"/>
+    <link port="When2.input" relation="relation3"/>
+    <link port="When2.output" relation="relation5"/>
+    <link port="When2.control" relation="relation2"/>
+    <link port="Default.preferred" relation="relation6"/>
+    <link port="Default.alternate" relation="relation7"/>
+    <link port="Default.output" relation="relation8"/>
+</entity>
