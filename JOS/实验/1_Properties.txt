@@ -1,0 +1,296 @@
+
+;;;;;;FrontVehicleDetection_c.xml
+;;p1 (true property)
+(=> (and (is-valueReal FrontVehicleDetection_c_relation2_$) (<= (dataReal FrontVehicleDetection_c_relation2_$) Max_Dis_Detect_FrontVehicleDetection_c_$) (> (dataReal FrontVehicleDetection_c_relation2_$) Safety_Distance_FrontVehicleDetection_c_$)) (= FrontVehicleDetection_c_relation8_$ (valueInt 2)))
+
+
+;;p2 (false property)
+(=> (and (is-valueReal FrontVehicleDetection_c_relation2_$) (<= (dataReal FrontVehicleDetection_c_relation2_$) Max_Dis_Detect_FrontVehicleDetection_c_$)) (= FrontVehicleDetection_c_relation8_$ (valueInt 2) ))
+
+
+
+
+
+;;;;;;;;;TargetCar_c.xml
+;p1 (true property)
+;result:1)unsat 2)unsat(k-induction) 
+(=> (and (is-valueReal TargetCar_c_relation2_$) (< (dataReal TargetCar_c_relation2_$) Max_Dis_Detect_TargetCar_c_$)) (= TargetCar_c_relation4_$ (valueBool true)))
+
+;p2 (false property)
+;result: 1)sat 
+(and (is-valueReal TargetCar_c_relation_$) (is-valueReal TargetCar_c_relation2_$) (is-valueReal TargetCar_c_relation9_$) (= (dataReal TargetCar_c_relation2_$) (+ (dataReal TargetCar_c_relation2_$-1) (- (dataReal TargetCar_c_relation_$) (dataReal TargetCar_c_relation9_$)))))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FinalStatesSR_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(or (= FinalStatesSR_c_relation_$ nilInt) (and (is-valueInt FinalStatesSR_c_relation_$) (<= (dataInt FinalStatesSR_c_relation_$) 5)))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (= ST_FinalStatesSR_c_FSMActor_$ 2) (= FinalStatesSR_c_relation_$ nilInt))
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_m1_c.xml
+;p1 (true property)
+;result: 1)unsat 2)sat(k-induction) 
+(and (is-valueInt FixedPointFSM_m1_c_relation3_$) (is-valueInt FixedPointFSM_m1_c_relation_$) (= (dataInt FixedPointFSM_m1_c_relation3_$) (* 2 (dataInt FixedPointFSM_m1_c_relation_$))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_m1_c_relation_$ FixedPointFSM_m1_c_relation2_$) (= FixedPointFSM_m1_c_relation3_$ FixedPointFSM_m1_c_relation4_$))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_m2_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(and (is-valueInt FixedPointFSM_m2_c_relation2_$) (is-valueInt FixedPointFSM_m2_c_relation_$) (= (dataInt FixedPointFSM_m2_c_relation2_$) (* 2 (dataInt FixedPointFSM_m2_c_relation_$))))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_m2_c_relation_$ FixedPointFSM_m2_c_relation4_$) (= FixedPointFSM_m2_c_relation2_$ FixedPointFSM_m2_c_relation3_$))
+
+
+
+
+
+;;;;;;;;;;SpeedControl_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(=> (and (is-valueReal SpeedControl_c_relation2_$) (is-valueReal SpeedControl_c_relation3_$) (not (or (>= (dataReal SpeedControl_c_relation3_$) (+ (dataReal SpeedControl_c_relation2_$) Accel_hyst_SpeedControl_c_$)) (< (dataReal SpeedControl_c_relation3_$) (+ (dataReal SpeedControl_c_relation2_$) Accel_hyst_SpeedControl_c_$))))) (= SpeedControl_c_relation6_$ (valueBool true)))
+
+;result: 1)sat 
+(=> (and (is-valueReal SpeedControl_c_relation2_$) (is-valueReal SpeedControl_c_relation3_$) (>= (dataReal SpeedControl_c_relation2_$) (dataReal SpeedControl_c_relation3_$))) (= SpeedControl_c_relation4_$ (valueBool true)))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;ACC_RisingEdge_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (and (= ACC_RisingEdge_c_relation_$-1 (valueBool false)) (= ACC_RisingEdge_c_relation_$ (valueBool true))) (= ACC_RisingEdge_c_relation5_$ (valueBool true)))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (and (= ACC_RisingEdge_c_relation_$-1 (valueBool true)) (= ACC_RisingEdge_c_relation_$ (valueBool true))) (= ACC_RisingEdge_c_relation5_$ (valueBool true)))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;ACC_FallingEdge_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (and (= ACC_FallingEdge_c_relation5_$-1 (valueBool true)) (= ACC_FallingEdge_c_relation5_$ (valueBool false))) (= ACC_FallingEdge_c_relation3_$ (valueBool true)))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (and (= ACC_FallingEdge_c_relation5_$-1 (valueBool false)) (= ACC_FallingEdge_c_relation5_$ (valueBool false))) (= ACC_FallingEdge_c_relation3_$ (valueBool true)))
+
+
+
+
+
+;;;;;;;;;;;sldv_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (= sldv_c_relation5_$ sldv_c_relation6_$ sldv_c_relation7_$ (valueBool false)) (= sldv_c_relation8_$ sldv_c_relation8_$-1))
+
+;p2 (false property)
+;result: 1)sat 
+(= sldv_c_relation9_$ (valueBool true))
+
+
+
+
+
+
+;;;;;;;;;;;sldv_fixed_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(= sldv_fixed_c_relation9_$ (valueBool true))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (= sldv_fixed_c_relation4_$ sldv_fixed_c_relation5_$ sldv_fixed_c_relation6_$ (valueBool true)) (= sldv_fixed_c_relation8_$ sldv_fixed_c_relation8_$-1))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;ACC_Accel_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction) 
+(=> (and (is-valueReal ACC_Accel_c_relation_$) (is-valueReal ACC_Accel_c_relation2_$) (is-valueReal ACC_Accel_c_relation18_$) ) (<= (dataReal ACC_Accel_c_relation18_$) (* Kv_ACC_Accel_c_$ (- (dataReal ACC_Accel_c_relation_$) (dataReal ACC_Accel_c_relation2_$)))))
+
+;p2 (false property)
+;result: 1)sat 
+(=> (and (is-valueReal ACC_Accel_c_relation_$) (is-valueReal ACC_Accel_c_relation2_$) (is-valueReal ACC_Accel_c_relation18_$)) (= (dataReal ACC_Accel_c_relation18_$) (* Kv_ACC_Accel_c_$ (- (dataReal ACC_Accel_c_relation_$) (dataReal ACC_Accel_c_relation2_$)))))
+
+
+
+
+
+;;;;;;Counter_c.xml
+;p1 (true property)
+;result:1)unsat 2)unsat(k-induction)
+(or (= Counter_c_relation_$ (valueInt 0)) (= Counter_c_relation_$ (valueInt 1)) (= Counter_c_relation_$ (valueInt 2)) (= Counter_c_relation_$ (valueInt 3)))
+
+;p2 (false property)
+;result:1)sat 
+(and (is-valueInt Counter_c_relation_$) (> (dataInt Counter_c_relation_$) 0))
+
+
+
+
+
+;;;;;;;;;;;;;;;;FixedPointFSM_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(and (= FixedPointFSM_c_relation4_$ FixedPointFSM_c_relation_$) (= FixedPointFSM_c_relation6_$ FixedPointFSM_c_relation5_$))
+
+;p2 (false property)
+;result: 1)sat 
+(and (= FixedPointFSM_c_relation4_$ FixedPointFSM_c_relation5_$) (= FixedPointFSM_c_relation_$ FixedPointFSM_c_relation6_$))
+
+
+
+
+
+;;;;;;;;;;;;;;;;;RailroadControl_c.xml
+;;p1 (true property)  
+;result: 1)unsat 2)unsat(k-induction)
+(not (and (= RailroadControl_c_relation4_$ (valueInt 1)) (= RailroadControl_c_relation_$ (valueInt 1))) )
+G(!(Train.Tin_value=TRUE & Gate.Gopen_value=TRUE))
+
+;;p2 (false property)
+;bd=10，result:：1)unsat 2)sat(k-induction)
+;bd=20，result:：1)sat   a counterexample exists between bound 10 and bound 20
+(=> (= ST_RailroadControl_c_Train_$ 4) (= ST_RailroadControl_c_Gate_$ 4))
+G(Train.state=leaving -> Gate.state=opening)
+
+
+
+
+;;;;;;;;;;;;;;;;;RailroadControl_error_c.xml
+;;p1 (true property)  
+;result: 1)unsat 2)unsat(k-induction)
+(=> (= ST_RailroadControl_error_c_Gate_$ 1) (or (= ST_RailroadControl_error_c_Train_$ 4) (= ST_RailroadControl_error_c_Train_$ 1)))
+G(Gate.state=open -> (Train.state=leaving | Train.state=far))
+
+;;p2 (false property)
+;result:：1)sat
+(not (and (= RailroadControl_error_c_relation4_$ (valueInt 1)) (= RailroadControl_error_c_relation_$ (valueInt 1))) )
+G(!(Train.Tin_value=TRUE & Gate.Gopen_value=TRUE))
+
+
+
+
+
+;;;;;;;;;;;;;;;SimpleTrafficLight_c.xml
+;p1 (true property) 
+;result: 1)unsat 2)unsat(k-induction)
+(not (and (= ST_SimpleTrafficLight_c_CarLightNormal_$ 3) (= ST_SimpleTrafficLight_c_PedestrianLightNormal_$ 2)))
+G(!(CarLightNormal.state = Cgrn & PedestrianLightNormal.state = Pgreen))
+
+;p2 (false property)
+;result:1)sat 
+(=> (= ST_SimpleTrafficLight_c_PedestrianLightNormal_$ 2) (or (= ST_SimpleTrafficLight_c_CarLightNormal_$ 2) (= ST_SimpleTrafficLight_c_CarLightNormal_$ 4)))
+G(PedestrianLightNormal.state = Pgreen -> (CarLightNormal.state = Cyel |CarLightNormal.state = Credyel ))
+
+
+
+
+
+;;;;;;;;;;;;;;;SimpleTrafficLight_m_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(=> (= ST_SimpleTrafficLight_m_c_CarLightNormal_$ 1) (or (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 1) (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 2) ))
+G(CarLightNormal.state = Cred -> (PedestrianLightNormal.state = Pred | PedestrianLightNormal.state = Pgreen))
+
+;p2 (false property)
+;bd=10，result: 1)unsat 2)sat(k-induction)
+;bd=20，result: 1)sat   a counterexample exists between bound 10 and bound 20
+(not (and (= ST_SimpleTrafficLight_m_c_CarLightNormal_$ 3) (= ST_SimpleTrafficLight_m_c_PedestrianLightNormal_$ 2)))
+G(!(CarLightNormal.state = Cgrn & PedestrianLightNormal.state = Pgreen))
+
+
+
+
+
+;;;;;; Driver_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)   
+(=> (and (is-valueReal Driver_c_relation8_$) (> (dataReal Driver_c_relation8_$) (* 1.2 Speed_Min_Driver_c_$))) (= Driver_c_relation27_$ (valueBool true)))
+
+;p2 (false property) 
+;result: 1)sat 
+(=> (= Driver_c_relation8_$ Driver_c_relation5_$) (= Driver_c_relation29_$ (valueBool true)))
+
+
+
+
+
+;;;;;;TokenRingMAC_c.xml
+;;p1(true property)
+(or (and (= TokenRingMAC_c_relation10_$ (valueBool true)) (= TokenRingMAC_c_relation2_$ (valueBool false)) (= TokenRingMAC_c_relation7_6_$ (valueBool false))) (and (= TokenRingMAC_c_relation10_$ (valueBool false)) (= TokenRingMAC_c_relation2_$ (valueBool true)) (= TokenRingMAC_c_relation7_6_$ (valueBool false))) (and (= TokenRingMAC_c_relation10_$ (valueBool false)) (= TokenRingMAC_c_relation2_$ (valueBool false)) (= TokenRingMAC_c_relation7_6_$ (valueBool true))) )
+
+
+;;p2 (false property)
+(= TokenRingMAC_c_relation7_6_$ (valueBool false))
+
+
+
+
+
+;;;;;;;;;;;;;;;HieSimpleTrafficLight_c.xml
+;p1 (true property) 
+;result: 1)unsat 2)unsat(k-induction)
+(not (and (= ST_HieSimpleTrafficLight_c_TrafficLight_CarLightNormal_$ 3) (= ST_HieSimpleTrafficLight_c_TrafficLight_PedestrianLightNormal_$ 2)))
+
+;p2 (false property)
+;result:1)sat 
+(=> (= ST_HieSimpleTrafficLight_c_TrafficLight_PedestrianLightNormal_$ 2) (or (= ST_HieSimpleTrafficLight_c_TrafficLight_CarLightNormal_$ 2) (= ST_HieSimpleTrafficLight_c_TrafficLight_CarLightNormal_$ 4)))
+
+
+
+
+
+
+;;;;;;;;;;;;;;;HieSimpleTrafficLight_error_c.xml
+;p1 (true property)
+;result: 1)unsat 2)unsat(k-induction)
+(=> (= ST_HieSimpleTrafficLight_error_c_TrafficLight_CarLightNormal_$ 1) (or (= ST_HieSimpleTrafficLight_error_c_TrafficLight_PedestrianLightNormal_$ 1) (= ST_HieSimpleTrafficLight_error_c_TrafficLight_PedestrianLightNormal_$ 2) ))
+
+;p2 (false property)
+;bd=10，result: 1)unsat 2)sat(k-induction)
+;bd=20，result: 1)sat   a counterexample exists between bound 10 and bound 20
+(not (and (= ST_HieSimpleTrafficLight_error_c_TrafficLight_CarLightNormal_$ 3) (= ST_HieSimpleTrafficLight_error_c_TrafficLight_PedestrianLightNormal_$ 2)))
+
+
+
+
+
+
+
+
+
+
+;;;;;;VhlDisMgt_c.xml
+;;p1(true property)
+(=> (and (= VhlDisMgt_c_relation15_$ (valueInt 2)) (is-valueReal VhlDisMgt_c_relation3_$)) (= VhlDisMgt_c_relation12_$ (valueReal (* 2.0 (dataReal VhlDisMgt_c_relation3_$) KmH_To_MS_VhlDisMgt_c_$))))
+
+;;p2 (false property)
+(=> (and (= VhlDisMgt_c_relation14_$ (valueBool true)) (is-valueReal VhlDisMgt_c_relation3_$)) (= VhlDisMgt_c_relation12_$ (valueReal (* 1.5 (dataReal VhlDisMgt_c_relation3_$) KmH_To_MS_VhlDisMgt_c_$))))
