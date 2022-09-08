@@ -1,12 +1,12 @@
 
-;;;;;;IfThenElseSR_h_c.xml
+;;;;;;hierarchical_IfThenElseSR_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(and (=> (= IfThenElseSR_h_c_relation2_$ (valueBool true)) (= IfThenElseSR_h_c_relation3_$ (valueInt (- (dataInt IfThenElseSR_h_c_relation_$)) ))) (=> (= IfThenElseSR_h_c_relation2_$ (valueBool false)) (= IfThenElseSR_h_c_relation3_$ IfThenElseSR_h_c_relation_$) ))
+(and (=> (= hierarchical_IfThenElseSR_c_relation2_$ (valueBool true)) (= hierarchical_IfThenElseSR_c_relation3_$ (valueInt (- (dataInt hierarchical_IfThenElseSR_c_relation_$)) ))) (=> (= hierarchical_IfThenElseSR_c_relation2_$ (valueBool false)) (= hierarchical_IfThenElseSR_c_relation3_$ hierarchical_IfThenElseSR_c_relation_$) ))
 
 ;p2 (false property)
 ;result: 1)sat 
-(and (=> (= IfThenElseSR_h_c_relation2_$ (valueBool true)) (= IfThenElseSR_h_c_relation3_$ IfThenElseSR_h_c_relation_$) ) (=> (= IfThenElseSR_h_c_relation2_$ (valueBool false)) (= IfThenElseSR_h_c_relation3_$ (valueInt (- (dataInt IfThenElseSR_h_c_relation_$)) ))  ))
+(and (=> (= hierarchical_IfThenElseSR_c_relation2_$ (valueBool true)) (= hierarchical_IfThenElseSR_c_relation3_$ hierarchical_IfThenElseSR_c_relation_$) ) (=> (= hierarchical_IfThenElseSR_c_relation2_$ (valueBool false)) (= hierarchical_IfThenElseSR_c_relation3_$ (valueInt (- (dataInt hierarchical_IfThenElseSR_c_relation_$)) ))  ))
 
 
 
@@ -28,55 +28,55 @@
 
 
 
-;;;;;;TokenRing_h_m_c.xml
+;;;;;;TokenRingMAC_c.xml
 ;;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(or (and (= TokenRing_h_m_c_relation10_$ (valueBool true)) (= TokenRing_h_m_c_relation2_$ (valueBool false)) (= TokenRing_h_m_c_relation16_$ (valueBool false))) (and (= TokenRing_h_m_c_relation10_$ (valueBool false)) (= TokenRing_h_m_c_relation2_$ (valueBool true)) (= TokenRing_h_m_c_relation16_$ (valueBool false))) (and (= TokenRing_h_m_c_relation10_$ (valueBool false)) (= TokenRing_h_m_c_relation2_$ (valueBool false)) (= TokenRing_h_m_c_relation16_$ (valueBool true))) )
+(or (and (= TokenRingMAC_c_relation10_$ (valueBool true)) (= TokenRingMAC_c_relation2_$ (valueBool false)) (= TokenRingMAC_c_relation16_$ (valueBool false))) (and (= TokenRingMAC_c_relation10_$ (valueBool false)) (= TokenRingMAC_c_relation2_$ (valueBool true)) (= TokenRingMAC_c_relation16_$ (valueBool false))) (and (= TokenRingMAC_c_relation10_$ (valueBool false)) (= TokenRingMAC_c_relation2_$ (valueBool false)) (= TokenRingMAC_c_relation16_$ (valueBool true))) )
 
 ;p2 (false property)
 ;result: 1)sat      
-(= TokenRing_h_m_c_relation16_$ (valueBool false))
+(= TokenRingMAC_c_relation16_$ (valueBool false))
 
 
 
 
 
 
-;;;;;;MalikCyclic_h_m_c.xml
+;;;;;;hierarchical_MalikCyclic_m_c.xml
 ;;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(and (=> (= MalikCyclic_h_m_c_relation3_$ (valueBool true)) (= MalikCyclic_h_m_c_relation_$ (valueReal (* 2 (+ (dataReal MalikCyclic_h_m_c_relation2_$) 2))))) (=> (= MalikCyclic_h_m_c_relation3_$ (valueBool false)) (= MalikCyclic_h_m_c_relation_$ (valueReal (+ (* 2 (dataReal MalikCyclic_h_m_c_relation2_$)) 2)))))
+(and (=> (= hierarchical_MalikCyclic_m_c_relation3_$ (valueBool true)) (= hierarchical_MalikCyclic_m_c_relation_$ (valueReal (* 2 (+ (dataReal hierarchical_MalikCyclic_m_c_relation2_$) 2))))) (=> (= hierarchical_MalikCyclic_m_c_relation3_$ (valueBool false)) (= hierarchical_MalikCyclic_m_c_relation_$ (valueReal (+ (* 2 (dataReal hierarchical_MalikCyclic_m_c_relation2_$)) 2)))))
 
 ;p2 (false property)
 ;result: 1)sat 
-(and (is-valueReal MalikCyclic_h_m_c_relation_$) (= (mod (dataReal MalikCyclic_h_m_c_relation_$) 2) 1))
+(and (is-valueReal hierarchical_MalikCyclic_m_c_relation_$) (= (mod (dataReal hierarchical_MalikCyclic_m_c_relation_$) 2) 1))
 
 
 
 
 
-;;;;;;MalikAcyclic_h_m_c.xml
+;;;;;;hierarchical_MalikAcyclic_m_c.xml
 ;;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(and (=> (= MalikAcyclic_h_m_c_relation3_$ (valueBool true)) (= MalikAcyclic_h_m_c_relation_$ (valueReal (* 2 (+ (dataReal MalikAcyclic_h_m_c_relation2_$) 2))))) (=> (= MalikAcyclic_h_m_c_relation3_$ (valueBool false)) (= MalikAcyclic_h_m_c_relation_$ (valueReal (+ (* 2 (dataReal MalikAcyclic_h_m_c_relation2_$)) 2)))))
+(and (=> (= hierarchical_MalikAcyclic_m_c_relation3_$ (valueBool true)) (= hierarchical_MalikAcyclic_m_c_relation_$ (valueReal (* 2 (+ (dataReal hierarchical_MalikAcyclic_m_c_relation2_$) 2))))) (=> (= hierarchical_MalikAcyclic_m_c_relation3_$ (valueBool false)) (= hierarchical_MalikAcyclic_m_c_relation_$ (valueReal (+ (* 2 (dataReal hierarchical_MalikAcyclic_m_c_relation2_$)) 2)))))
 
 ;p2 (false property)
 ;result: 1)sat 
-(and (is-valueReal MalikAcyclic_h_m_c_relation_$) (= (mod (dataReal MalikAcyclic_h_m_c_relation_$) 2) 1))
+(and (is-valueReal hierarchical_MalikAcyclic_m_c_relation_$) (= (mod (dataReal hierarchical_MalikAcyclic_m_c_relation_$) 2) 1))
 
 
 
 
 
 
-;;;;;;CountDown_h_m_c.xml
+;;;;;;hierarchical_CountDown_m_c.xml
 ;;p1 (true property)
 ;result: 1)unsat 2)sat(k-induction)
-(or (= CountDown_h_m_c_relation4_$ nilInt) (and (is-valueInt CountDown_h_m_c_relation4_$) (>= (dataInt CountDown_h_m_c_relation4_$) 0)))
+(or (= hierarchical_CountDown_m_c_relation4_$ nilInt) (and (is-valueInt hierarchical_CountDown_m_c_relation4_$) (>= (dataInt hierarchical_CountDown_m_c_relation4_$) 0)))
 
 ;;p2 (false property)
 ;result: 1)sat 
-(=> (= CountDown_h_m_c_CountDown_relation6_$ (valueReal 0)) (= CountDown_h_m_c_relation4_$ CountDown_h_m_c_relation_$))
+(=> (= hierarchical_CountDown_m_c_CountDown_relation6_$ (valueReal 0)) (= hierarchical_CountDown_m_c_relation4_$ hierarchical_CountDown_m_c_relation_$))
 
 
 
@@ -84,28 +84,28 @@
 
 
 
-;;;;;;;;;;;sldv_model_c.xml
+;;;;;;;;;;;sldv_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction) 
-(=> (= sldv_model_c_relation5_$ sldv_model_c_relation6_$ sldv_model_c_relation7_$ (valueBool false)) (= sldv_model_c_relation8_$ sldv_model_c_relation8_$-1))
+(=> (= sldv_c_relation5_$ sldv_c_relation6_$ sldv_c_relation7_$ (valueBool false)) (= sldv_c_relation8_$ sldv_c_relation8_$-1))
 
 ;p2 (false property)
 ;result: 1)sat 
-(= sldv_model_c_relation9_$ (valueBool true))
+(= sldv_c_relation9_$ (valueBool true))
 
 
 
 
 
 
-;;;;;;;;;;;sldv_model_fixed_c.xml
+;;;;;;;;;;;sldv_fixed_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction) 
-(= sldv_model_fixed_c_relation9_$ (valueBool true))
+(= sldv_fixed_c_relation9_$ (valueBool true))
 
 ;p2 (false property)
 ;result: 1)sat 
-(=> (= sldv_model_fixed_c_relation4_$ sldv_model_fixed_c_relation5_$ sldv_model_fixed_c_relation6_$ (valueBool true)) (= sldv_model_fixed_c_relation8_$ sldv_model_fixed_c_relation8_$-1))
+(=> (= sldv_fixed_c_relation4_$ sldv_fixed_c_relation5_$ sldv_fixed_c_relation6_$ (valueBool true)) (= sldv_fixed_c_relation8_$ sldv_fixed_c_relation8_$-1))
 
 
 
@@ -113,14 +113,14 @@
 
 
 
-;;;;;;;;;TargetCar_h_c.xml
+;;;;;;;;;hierarchical_TargetCar_c.xml
 ;p1 (true property)
 ;result:1)unsat 2)unsat(k-induction) 
-(=> (and (is-valueReal TargetCar_h_c_relation6_$) (< (dataReal TargetCar_h_c_relation6_$) Max_Dis_Detect_TargetCar_h_c_$)) (= TargetCar_h_c_relation4_$ (valueBool true)))
+(=> (and (is-valueReal hierarchical_TargetCar_c_relation6_$) (< (dataReal hierarchical_TargetCar_c_relation6_$) Max_Dis_Detect_hierarchical_TargetCar_c_$)) (= hierarchical_TargetCar_c_relation4_$ (valueBool true)))
 
 ;p2 (false property)
 ;result: 1)sat 
-(and (is-valueReal TargetCar_h_c_relation_$) (is-valueReal TargetCar_h_c_relation6_$) (is-valueReal TargetCar_h_c_relation2_$) (= (dataReal TargetCar_h_c_relation6_$) (+ (dataReal TargetCar_h_c_relation6_$-1) (- (dataReal TargetCar_h_c_relation_$) (dataReal TargetCar_h_c_relation2_$)))))
+(and (is-valueReal hierarchical_TargetCar_c_relation_$) (is-valueReal hierarchical_TargetCar_c_relation6_$) (is-valueReal hierarchical_TargetCar_c_relation2_$) (= (dataReal hierarchical_TargetCar_c_relation6_$) (+ (dataReal hierarchical_TargetCar_c_relation6_$-1) (- (dataReal hierarchical_TargetCar_c_relation_$) (dataReal hierarchical_TargetCar_c_relation2_$)))))
 
 
 
@@ -129,28 +129,28 @@
 
 
 
-;;;;;;;;;;;;;;;;;ACCOnOff_h_c.xml
+;;;;;;;;;;;;;;;;;hierarchical_ACCOnOff_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction) 
-(and (=> (and (= ACCOnOff_h_c_relation4_$-1 (valueBool false)) (= ACCOnOff_h_c_relation4_$ (valueBool true))) (= ST_ACCOnOff_h_c_FSM_$ 0)) (=> (and (= ACCOnOff_h_c_relation4_$-1 (valueBool true)) (= ACCOnOff_h_c_relation4_$ (valueBool false))) (= ST_ACCOnOff_h_c_FSM_$ 1)))
+(and (=> (and (= hierarchical_ACCOnOff_c_relation4_$-1 (valueBool false)) (= hierarchical_ACCOnOff_c_relation4_$ (valueBool true))) (= ST_hierarchical_ACCOnOff_c_FSM_$ 0)) (=> (and (= hierarchical_ACCOnOff_c_relation4_$-1 (valueBool true)) (= hierarchical_ACCOnOff_c_relation4_$ (valueBool false))) (= ST_hierarchical_ACCOnOff_c_FSM_$ 1)))
 
 ;p2 (false property)
 ;result: 1)sat 
-(=> (= ACCOnOff_h_c_relation3_$ (valueBool false)) (= ST_ACCOnOff_h_c_FSM_$ 1))
+(=> (= hierarchical_ACCOnOff_c_relation3_$ (valueBool false)) (= ST_hierarchical_ACCOnOff_c_FSM_$ 1))
 
 
 
 
 
 
-;;;;;; Driver_h_c.xml
+;;;;;; hierarchical_Driver_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)   
-(=> (and (is-valueReal Driver_h_c_relation11_$) (> (dataReal Driver_h_c_relation11_$) (* 1.2 Speed_Min_Driver_h_c_$))) (= Driver_h_c_relation12_$ (valueBool true)))
+(=> (and (is-valueReal hierarchical_Driver_c_relation11_$) (> (dataReal hierarchical_Driver_c_relation11_$) (* 1.2 Speed_Min_hierarchical_Driver_c_$))) (= hierarchical_Driver_c_relation12_$ (valueBool true)))
 
 ;p2 (false property) 
 ;result: 1)sat 
-(=> (= Driver_h_c_relation11_$ Driver_h_c_relation15_$) (= Driver_h_c_relation16_$ (valueBool true)))
+(=> (= hierarchical_Driver_c_relation11_$ hierarchical_Driver_c_relation15_$) (= hierarchical_Driver_c_relation16_$ (valueBool true)))
 
 
 
@@ -180,7 +180,7 @@
 
 ;p2 (false property)
 ;result: 1)sat
-(=> (= normal_PedestrianLightNormal_$ 1) (= normal_CarLightNormal_$ 3))
+(=> (= TrafficLightController_c_TrafficLight_normal_PedestrianLightNormal_$ 1) (= TrafficLightController_c_TrafficLight_normal_CarLightNormal_$ 3))
 
 
 
@@ -190,7 +190,7 @@
 ;;;;;;;;;TrafficLightController_m_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(=> (= normal_PedestrianLightNormal_$ 1) (or (= normal_CarLightNormal_$ 1) (= normal_CarLightNormal_$ 2) (= normal_CarLightNormal_$ 3) (= normal_CarLightNormal_$ 4)))
+(=> (= TrafficLightController_m_c_TrafficLight_normal_PedestrianLightNormal_$ 1) (or (= TrafficLightController_m_c_TrafficLight_normal_CarLightNormal_$ 1) (= TrafficLightController_m_c_TrafficLight_normal_CarLightNormal_$ 2) (= TrafficLightController_m_c_TrafficLight_normal_CarLightNormal_$ 3) (= TrafficLightController_m_c_TrafficLight_normal_CarLightNormal_$ 4)))
 
 ;p2 (false property)
 ;result: 1)sat 
@@ -232,15 +232,15 @@
 
 
 
-;;;;;;;;;;;;;;;;;RailroadControl_h_c.xml
+;;;;;;;;;;;;;;;;;hierarchical_RailroadControl_c.xml
 ;;p1 (true property)  
 ;result: 1)unsat 2)unsat(k-induction)
-(not (and (= RailroadControl_h_c_relation2_$ (valueInt 1)) (= RailroadControl_h_c_relation5_$ (valueInt 1))) )
+(not (and (= hierarchical_RailroadControl_c_relation2_$ (valueInt 1)) (= hierarchical_RailroadControl_c_relation5_$ (valueInt 1))) )
 
 ;;p2 (false property)
 ;bd=10，result:：1)unsat 2)sat(k-induction)
 ;bd=20，result:：1)sat   a counterexample exists between bound 10 and bound 20
-(=> (= RailroadControl_h_c_Control_Train_$ 4) (= RailroadControl_h_c_Control_Gate_$ 4))
+(=> (= hierarchical_RailroadControl_c_Control_Train_$ 4) (= hierarchical_RailroadControl_c_Control_Gate_$ 4))
 
 
 
@@ -248,29 +248,29 @@
 
 
 
-;;;;;;;;;;;;;;;SimpleTrafficLight_h_m_c.xml
+;;;;;;;;;;;;;;;hierarchical_SimpleTrafficLight_m_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction)
-(=> (= SimpleTrafficLight_h_m_c_TrafficLight_CarLightNormal_$ 1) (or (= SimpleTrafficLight_h_m_c_TrafficLight_PedestrianLightNormal_$ 1) (= SimpleTrafficLight_h_m_c_TrafficLight_PedestrianLightNormal_$ 2) ))
+(=> (= hierarchical_SimpleTrafficLight_m_c_TrafficLight_CarLightNormal_$ 1) (or (= hierarchical_SimpleTrafficLight_m_c_TrafficLight_PedestrianLightNormal_$ 1) (= hierarchical_SimpleTrafficLight_m_c_TrafficLight_PedestrianLightNormal_$ 2) ))
 
 ;p2 (false property)
 ;bd=10，result: 1)unsat 2)sat(k-induction)
 ;bd=20，result: 1)sat   a counterexample exists between bound 10 and bound 20
-(not (and (= SimpleTrafficLight_h_m_c_TrafficLight_CarLightNormal_$ 3) (= SimpleTrafficLight_h_m_c_TrafficLight_PedestrianLightNormal_$ 2)))
+(not (and (= hierarchical_SimpleTrafficLight_m_c_TrafficLight_CarLightNormal_$ 3) (= hierarchical_SimpleTrafficLight_m_c_TrafficLight_PedestrianLightNormal_$ 2)))
 
 
 
 
 
 
-;;;;;;;;;;;;;;;;;ACCOnOff_h_m_c.xml
+;;;;;;;;;;;;;;;;;ACCSwitch_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction) 
-(and (=> (and (= ACCOnOff_h_m_c_relation4_$-1 (valueBool false)) (= ACCOnOff_h_m_c_relation4_$ (valueBool true))) (= ACCOnOff_h_m_c_FSM_$ 0)) (=> (and (= ACCOnOff_h_m_c_relation4_$-1 (valueBool true)) (= ACCOnOff_h_m_c_relation4_$ (valueBool false))) (= ACCOnOff_h_m_c_FSM_$ 1)))
+(and (=> (and (= ACCSwitch_c_relation4_$-1 (valueBool false)) (= ACCSwitch_c_relation4_$ (valueBool true))) (= ACCSwitch_c_FSM_$ 0)) (=> (and (= ACCSwitch_c_relation4_$-1 (valueBool true)) (= ACCSwitch_c_relation4_$ (valueBool false))) (= ACCSwitch_c_FSM_$ 1)))
 
 ;p2 (false property)
 ;result: 1)sat 
-(=> (and (is-valueReal ACCOnOff_h_m_c_relation3_$) (<= (dataReal ACCOnOff_h_m_c_relation3_$) Pedals_Min_ACCOnOff_h_m_c_FSM_ACC_ON_CA_$) (is-valueReal ACCOnOff_h_m_c_FSM_ACC_ON_CA_relation6_$) (>= Safety_Distance_ACCOnOff_h_m_c_FSM_ACC_ON_CA_$ (dataReal ACCOnOff_h_m_c_FSM_ACC_ON_CA_relation6_$)) (= ACCOnOff_h_m_c_relation5_$ (valueBool true))) (= ACCOnOff_h_m_c_FSM_$ 0))
+(=> (and (is-valueReal ACCSwitch_c_relation3_$) (<= (dataReal ACCSwitch_c_relation3_$) Pedals_Min_ACCSwitch_c_FSM_ACC_ON_CA_$) (is-valueReal ACCSwitch_c_FSM_ACC_ON_CA_relation6_$) (>= Safety_Distance_ACCSwitch_c_FSM_ACC_ON_CA_$ (dataReal ACCSwitch_c_FSM_ACC_ON_CA_relation6_$)) (= ACCSwitch_c_relation5_$ (valueBool true))) (= ACCSwitch_c_FSM_$ 0))
 
 
 
@@ -279,13 +279,13 @@
 
 
 
-;;;;;;;;;;;;;;;;;ACCControl_h_c.xml
+;;;;;;;;;;;;;;;;;hierarchical_ACCControl_c.xml
 ;p1 (true property)
 ;result: 1)unsat 2)unsat(k-induction) 
-(=> (and (is-valueReal ACCControl_h_c_relation2_$) (<= (dataReal ACCControl_h_c_relation2_$) Pedals_Min_ACCControl_h_c_$) (is-valueReal ACCControl_h_c_relation13_$) (<= Safety_Distance_ACCControl_h_c_$ (dataReal ACCControl_h_c_relation13_$)) (= ACCControl_h_c_relation6_$ (valueBool true))) (= ACCControl_h_c_FSM_$ 0))
+(=> (and (is-valueReal hierarchical_ACCControl_c_relation2_$) (<= (dataReal hierarchical_ACCControl_c_relation2_$) Pedals_Min_hierarchical_ACCControl_c_$) (is-valueReal hierarchical_ACCControl_c_relation13_$) (<= Safety_Distance_hierarchical_ACCControl_c_$ (dataReal hierarchical_ACCControl_c_relation13_$)) (= hierarchical_ACCControl_c_relation6_$ (valueBool true))) (= hierarchical_ACCControl_c_FSM_$ 0))
 
 ;p2 (false property)
 ;result: 1)sat 
-(=> (and (is-valueReal ACCControl_h_c_relation13_$) (> Safety_Distance_ACCControl_h_c_$ (dataReal ACCControl_h_c_relation13_$))) (= ACCControl_h_c_FSM_$ 0))
+(=> (and (is-valueReal hierarchical_ACCControl_c_relation13_$) (> Safety_Distance_hierarchical_ACCControl_c_$ (dataReal hierarchical_ACCControl_c_relation13_$))) (= hierarchical_ACCControl_c_FSM_$ 0))
 
 
