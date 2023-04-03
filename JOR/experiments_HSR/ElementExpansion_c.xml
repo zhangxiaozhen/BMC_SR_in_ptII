@@ -1,0 +1,245 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="ElementExpansion_c" class="ptolemy.actor.TypedCompositeActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="11.0.1_20180619">
+    </property>
+    <property name="SR Director" class="ptolemy.domains.sr.kernel.SRDirector">
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-5.0, 105.0]">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={-9, -9, 1938, 1048}, maximized=true}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1708, 918]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000002">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{609.1116615853659, 288.42082698170736}">
+    </property>
+    <property name="SMTConverter" class="ptolemy.verification.kernel.SMTConverter">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[125.0, 110.0]">
+        </property>
+    </property>
+    <property name="Formal Model Converter" class="ptolemy.verification.kernel.MathematicalModelConverter">
+        <property name="target" class="ptolemy.data.expr.FileParameter" value="stl.kripke">
+            <display name="Target File"/>
+        </property>
+        <property name="modelType" class="ptolemy.data.expr.ChoiceParameter" value="Kripke Structures (Acceptable by NuSMV under SR)">
+            <display name="Model Type"/>
+        </property>
+        <property name="Formula Type" class="ptolemy.data.expr.ChoiceParameter" value="CTL">
+            <display name="Formula Type"/>
+        </property>
+        <property name="Output Type" class="ptolemy.data.expr.ChoiceParameter" value="Text Only">
+            <display name="Output Type"/>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[304.2233231707321, 108.84165396341484]">
+        </property>
+    </property>
+    <entity name="NonStrictDisplay" class="ptolemy.domains.sr.lib.gui.NonStrictDisplay">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={670, 48, 600, 279}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[582, 206]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[785.0, 240.0]">
+        </property>
+    </entity>
+    <entity name="IterateOverArray" class="ptolemy.actor.lib.hoc.IterateOverArray">
+        <doc>Iterate a contained actor over input arrays</doc>
+        <property name="_icon" class="ptolemy.vergil.icon.CopyCatIcon">
+        </property>
+        <property name="_configurer" class="ptolemy.actor.gui.InsideEntityEditorPaneFactory">
+        </property>
+        <property name="_tableauFactory" class="ptolemy.actor.gui.LevelSkippingTableauFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[425.0, 325.0]">
+        </property>
+        <port name="input" class="ptolemy.actor.lib.hoc.IterateOverArray$IteratePort">
+            <property name="input"/>
+        </port>
+        <port name="output" class="ptolemy.actor.lib.hoc.IterateOverArray$IteratePort">
+            <property name="output"/>
+        </port>
+        <entity name="Scale" class="ptolemy.actor.lib.Scale">
+            <property name="factor" class="ptolemy.data.expr.Parameter" value="5">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.AttributeValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="factor">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{215, 215}">
+            </property>
+        </entity>
+    </entity>
+    <entity name="Ramp" class="ptolemy.actor.lib.Ramp">
+        <property name="step" class="ptolemy.actor.parameters.PortParameter" value="2">
+        </property>
+        <doc>Create a sequence of tokens with increasing value</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 205.0]">
+        </property>
+    </entity>
+    <entity name="Ramp2" class="ptolemy.actor.lib.Ramp">
+        <property name="init" class="ptolemy.actor.parameters.PortParameter" value="5">
+        </property>
+        <doc>Create a sequence of tokens with increasing value</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 320.0]">
+        </property>
+    </entity>
+    <entity name="Ramp3" class="ptolemy.actor.lib.Ramp">
+        <property name="init" class="ptolemy.actor.parameters.PortParameter" value="20">
+        </property>
+        <property name="step" class="ptolemy.actor.parameters.PortParameter" value="-3">
+        </property>
+        <doc>Create a sequence of tokens with increasing value</doc>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[-20.0, 455.0]">
+        </property>
+    </entity>
+    <entity name="CompositeActor" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{215, 325}">
+        </property>
+        <port name="in1" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 200.0}">
+            </property>
+        </port>
+        <port name="in2" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 240.0}">
+            </property>
+        </port>
+        <port name="in3" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{20.0, 280.0}">
+            </property>
+        </port>
+        <port name="out" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[700.0, 225.0]">
+            </property>
+        </port>
+        <entity name="ElementsToArray" class="ptolemy.actor.lib.ElementsToArray">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[185.0, 225.0]">
+            </property>
+        </entity>
+        <entity name="ArrayMaximum" class="ptolemy.actor.lib.ArrayMaximum">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[375.0, 320.0]">
+            </property>
+        </entity>
+        <entity name="ArrayMinimum" class="ptolemy.actor.lib.ArrayMinimum">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[375.0, 400.0]">
+            </property>
+        </entity>
+        <entity name="ArrayUpdate" class="ptolemy.actor.lib.ArrayUpdate">
+            <property name="index" class="ptolemy.actor.parameters.PortParameter" value="2">
+            </property>
+            <property name="value" class="ptolemy.actor.parameters.PortParameter" value="1">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[420.0, 225.0]">
+            </property>
+        </entity>
+        <entity name="ArrayUpdate2" class="ptolemy.actor.lib.ArrayUpdate">
+            <property name="value" class="ptolemy.actor.parameters.PortParameter" value="1">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[550.0, 225.0]">
+            </property>
+        </entity>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+            <property name="width" class="ptolemy.data.expr.Parameter" value="-1">
+            </property>
+            <vertex name="vertex1" value="[295.0, 225.0]">
+            </vertex>
+        </relation>
+        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <link port="in1" relation="relation"/>
+        <link port="in2" relation="relation2"/>
+        <link port="in3" relation="relation3"/>
+        <link port="out" relation="relation8"/>
+        <link port="ElementsToArray.input" relation="relation"/>
+        <link port="ElementsToArray.input" relation="relation2"/>
+        <link port="ElementsToArray.input" relation="relation3"/>
+        <link port="ElementsToArray.output" relation="relation5"/>
+        <link port="ArrayMaximum.input" relation="relation5"/>
+        <link port="ArrayMaximum.output" relation="relation4"/>
+        <link port="ArrayMinimum.input" relation="relation5"/>
+        <link port="ArrayMinimum.output" relation="relation6"/>
+        <link port="ArrayUpdate.input" relation="relation5"/>
+        <link port="ArrayUpdate.output" relation="relation7"/>
+        <link port="ArrayUpdate.value" relation="relation4"/>
+        <link port="ArrayUpdate2.input" relation="relation7"/>
+        <link port="ArrayUpdate2.output" relation="relation8"/>
+        <link port="ArrayUpdate2.value" relation="relation6"/>
+    </entity>
+    <entity name="ArrayToElements" class="ptolemy.actor.lib.ArrayToElements">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[605.0, 325.0]">
+        </property>
+    </entity>
+    <entity name="NonStrictDisplay2" class="ptolemy.domains.sr.lib.gui.NonStrictDisplay">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1326, 220, 365, 259}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[347, 186]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[785.0, 330.0]">
+        </property>
+    </entity>
+    <entity name="NonStrictDisplay3" class="ptolemy.domains.sr.lib.gui.NonStrictDisplay">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1229, 714, 609, 259}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[591, 186]">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[795.0, 420.0]">
+        </property>
+    </entity>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+    </relation>
+    <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+    </relation>
+    <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+        <property name="width" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+    </relation>
+    <link port="NonStrictDisplay.input" relation="relation6"/>
+    <link port="IterateOverArray.input" relation="relation4"/>
+    <link port="IterateOverArray.output" relation="relation5"/>
+    <link port="Ramp.output" relation="relation"/>
+    <link port="Ramp2.output" relation="relation2"/>
+    <link port="Ramp3.output" relation="relation3"/>
+    <link port="CompositeActor.in1" relation="relation"/>
+    <link port="CompositeActor.in2" relation="relation2"/>
+    <link port="CompositeActor.in3" relation="relation3"/>
+    <link port="CompositeActor.out" relation="relation4"/>
+    <link port="ArrayToElements.input" relation="relation5"/>
+    <link port="ArrayToElements.output" relation="relation6"/>
+    <link port="ArrayToElements.output" relation="relation7"/>
+    <link port="ArrayToElements.output" relation="relation8"/>
+    <link port="NonStrictDisplay2.input" relation="relation7"/>
+    <link port="NonStrictDisplay3.input" relation="relation8"/>
+</entity>
